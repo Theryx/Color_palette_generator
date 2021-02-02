@@ -21,6 +21,14 @@ function randomColors() {
     hexText.innerText = randomColor;
     //Check text contrast
     checkTextContrast(randomColor, hexText);
+    //Initial colorize slider
+    const color = chroma(randomColor);
+    const sliders = div.querySelectorAll(".sliders input");
+    const hue = sliders[0];
+    const brightness = sliders[1];
+    const saturation = sliders[2];
+
+    colorizeSlider(color, hue, brightness, saturation);
   });
 }
 function checkTextContrast(color, text) {
@@ -30,5 +38,23 @@ function checkTextContrast(color, text) {
   } else {
     text.style.color = "white";
   }
+}
+
+function colorizeSlider(color, hue, brightness, saturation) {
+  //Scale saturation
+  const noSat = color.set("hsl.s", 0);
+  const fullSat = color.set("hsl.s", 1);
+  const scaleSat = chroma.scale([noSat, color, fullSat]);
+  //scale Brightness
+  const midBright = color.set("hsl.l", 0.5);
+  const scaleBright = chroma.scale(["black", midBright, "white"]);
+  //Update imput color
+  saturation.style.backgroundImage = `linear-gradient(to right,${scaleSat(
+    0
+  )},${scaleSat(1)})`;
+  brightness.style.backgroundImage = `linear-gradient(to right,${scaleBright(
+    0
+  )},${scaleBright(0.5)},${scaleBright(1)})`;
+  hue.style.backgroundImage = `linear-gradient(to right, #FF0000, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF, #FF0000)`;
 }
 randomColors();
