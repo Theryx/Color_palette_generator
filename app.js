@@ -3,11 +3,16 @@ const colorDivs = document.querySelectorAll(".color");
 const generateBtn = document.querySelector(".generate");
 const sliders = document.querySelectorAll(`input[type = "range"]`);
 const currentHexes = document.querySelectorAll(".color h2");
-let initialColors;
+let initialColors = [];
 
 //Event listeners
 sliders.forEach((slider) => {
   slider.addEventListener("input", hslControls);
+});
+colorDivs.forEach((div, index) => {
+  div.addEventListener("change", () => {
+    updateTextUI(index);
+  });
 });
 
 //Functions
@@ -18,9 +23,13 @@ function generateHex() {
 }
 
 function randomColors() {
+  initialColors = [];
   colorDivs.forEach((div, index) => {
     const hexText = div.children[0];
     const randomColor = generateHex();
+    //Add it to the arrey
+    initialColors.push(chroma(randomColor).hex());
+
     //Add the color to the BG
     div.style.backgroundColor = randomColor;
     hexText.innerText = randomColor;
@@ -33,7 +42,7 @@ function randomColors() {
     const brightness = sliders[1];
     const saturation = sliders[2];
 
-    colorizeSlider(color, hue, brightness, saturation);
+    colorizeSliders(color, hue, brightness, saturation);
   });
 }
 function checkTextContrast(color, text) {
@@ -45,7 +54,7 @@ function checkTextContrast(color, text) {
   }
 }
 
-function colorizeSlider(color, hue, brightness, saturation) {
+function colorizeSliders(color, hue, brightness, saturation) {
   //Scale saturation
   const noSat = color.set("hsl.s", 0);
   const fullSat = color.set("hsl.s", 1);
@@ -85,5 +94,18 @@ function hslControls(e) {
 
   //Colorize inputs/sliders
   colorizeSliders(color, hue, brightness, saturation);
+}
+
+function updateTextUI(index) {
+  const activeDiv = colorDivs[index];
+  const color = chroma(activeDiv.style.backgroundColor);
+  const textHex = activeDiv.querySelector("h2");
+  const icons = activeDiv.querySelectorAll(".controls button");
+  textHex.innerText = color.hex();
+  //Check Contrast
+  checkTextContrast(color, textHex);
+  for (icon of icons) {
+    checkTextContrast(color, icon);
+  }
 }
 randomColors();
