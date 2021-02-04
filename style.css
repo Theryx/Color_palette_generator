@@ -123,3 +123,40 @@ input[type="range"] {
   border-radius: 1rem;
   cursor: pointer;
 }
+.copy-container {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: rgb(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.copy-popup {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 2rem;
+  transition: transform 0.5s ease;
+  transform: translateY(-2rem);
+  min-width: 30%;
+  min-height: 30vh;
+}
+.copy-popup.active {
+  transform: translateY(0rem);
+}
+.copy-popup h2 {
+  font-size: 2rem;
+  padding: 2rem;
+}
+.copy-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
