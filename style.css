@@ -42,16 +42,16 @@ svg {
   flex-direction: column;
   position: absolute;
   bottom: 0%;
-  /* opacity: 0; */
+  opacity: 0;
   background: rgb(255, 255, 255);
   padding: 1rem;
   width: 80%;
   color: rgb(131, 131, 131);
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
-  /* pointer-events: none; */
+  pointer-events: none;
   /* We are adding an adjustment class here */
-  /* transform: translateY(100px); */
+  transform: translateY(100px);
   transition: all 0.5s ease-in-out;
 }
 .sliders.active {
@@ -145,6 +145,7 @@ input[type="range"] {
   align-items: center;
   border-radius: 2rem;
   transition: transform 0.5s ease;
+  transition: all 0.5s ease-in-out;
   transform: translateY(-2rem);
   min-width: 30%;
   min-height: 30vh;
