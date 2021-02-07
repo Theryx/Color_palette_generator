@@ -4,31 +4,29 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Muli", "sans-serif";
-  color: rgb(58, 58, 58);
+  font-family: "Muli", sans-serif;
+  color: rgb(51, 51, 51);
 }
 button {
-  font-family: "Muli", "sans-serif";
+  font-family: "Muli", sans-serif;
 }
-
 path,
 i,
 svg {
   pointer-events: none;
 }
-
 .colors {
   min-height: 80vh;
   display: flex;
-  color: rgb(223, 223, 223);
+  color: rgb(212, 212, 212);
 }
 .color {
   height: 80vh;
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
   position: relative;
   overflow: hidden;
 }
@@ -36,21 +34,19 @@ svg {
   font-size: 2rem;
   cursor: pointer;
 }
-
 .sliders {
   display: flex;
   flex-direction: column;
   position: absolute;
   bottom: 0%;
-  opacity: 0;
   background: rgb(255, 255, 255);
+  opacity: 0;
   padding: 1rem;
   width: 80%;
-  color: rgb(131, 131, 131);
   border-top-right-radius: 1rem;
-  border-top-left-radius: 1rem;
   pointer-events: none;
-  /* We are adding an adjustment class here */
+  border-top-left-radius: 1rem;
+  /* We are adding an adjustemnt class */
   transform: translateY(100px);
   transition: all 0.5s ease-in-out;
 }
@@ -69,29 +65,26 @@ svg {
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   border: none;
-  background: rgb(77, 77, 77);
+  background: rgb(73, 73, 73);
   color: white;
   cursor: pointer;
   font-weight: bold;
 }
-
 .controls {
   display: flex;
   flex-direction: column;
 }
-
 .panel {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   height: 20vh;
 }
-
 .panel button {
   font-size: 1.2rem;
   margin: 1rem;
   padding: 1rem 2rem;
-  background: rgb(9, 12, 22);
+  background: rgb(31, 33, 63);
   border: none;
   color: white;
   cursor: pointer;
@@ -100,23 +93,24 @@ svg {
 .panel p {
   font-size: 1.2rem;
 }
-.libary-panel,
+.library-panel,
 .generate-panel,
 .save-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .adjust,
 .lock {
   font-size: 2rem;
-  margin: 2rem 0rem;
   border: none;
   background: none;
   cursor: pointer;
+  margin: 2rem 0rem;
 }
 
-/* Slider stuff */
+/* Slider Stuff */
 input[type="range"] {
   -webkit-appearance: none;
   margin: 1rem 0rem;
@@ -125,22 +119,23 @@ input[type="range"] {
   border-radius: 1rem;
   cursor: pointer;
 }
+
 .copy-container,
 .save-container,
 .library-container {
   position: fixed;
   top: 0%;
   left: 0%;
-  background: rgb(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
+  transition: all 0.5s ease-in-out;
   align-items: center;
   opacity: 0;
   pointer-events: none;
 }
-
 .copy-popup,
 .save-popup,
 .library-popup {
@@ -151,21 +146,19 @@ input[type="range"] {
   align-items: center;
   border-radius: 2rem;
   transition: transform 0.5s ease;
-  transition: all 0.5s ease-in-out;
   transform: translateY(-2rem);
   min-width: 30%;
   min-height: 30vh;
 }
-
-.copy-popup h2,
-.save-popup h2,
-.library-popup h2 {
+.copy-popup h4,
+.save-popup h4,
+.library-popup h4 {
   font-size: 2rem;
   padding: 2rem;
 }
 .copy-container.active,
-.library-container.active,
-.save-container.active {
+.save-container.active,
+.library-container.active {
   opacity: 1;
   pointer-events: all;
 }
@@ -174,23 +167,59 @@ input[type="range"] {
 .library-popup.active {
   transform: translateY(0rem);
 }
-.save-name {
-  font-size: 1rem;
-  padding: 0.5rem;
-}
 
-.colse-save,
+.save-name {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.close-save,
 .close-library {
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
 .submit-save {
-  margin: 1rem;
-  padding: 0.5rem 3rem;
-  background: rgb(5, 3, 24);
+  margin: 2rem;
+  padding: 1rem 3rem;
+  background: rgb(60, 60, 92);
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
   cursor: pointer;
+}
+
+.library-popup {
+  min-width: 40%;
+  padding: 1rem;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  max-height: 50vh;
+}
+.custom-palette {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 2rem;
+}
+.small-preview {
+  display: flex;
+  flex: 1;
+}
+.custom-palette h4 {
+  flex: 1;
+}
+
+.small-preview div {
+  height: 5rem;
+  flex: 1;
+}
+.pick-palette-btn {
+  height: 5rem;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  background: rgb(41, 41, 41);
+  color: white;
 }
