@@ -1,3 +1,6 @@
+html {
+  font-size: 67%;
+}
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +21,7 @@ svg {
 .colors {
   min-height: 80vh;
   display: flex;
-  color: rgb(212, 212, 212);
+  color: rgb(0 0 0);
 }
 .color {
   height: 80vh;
@@ -82,8 +85,8 @@ svg {
 }
 .panel button {
   font-size: 1.2rem;
-  margin: 1rem;
-  padding: 1rem 2rem;
+  margin: 0.5rem;
+  padding: 0.7rem 2rem;
   background: rgb(31, 33, 63);
   border: none;
   color: white;
@@ -131,7 +134,7 @@ input[type="range"] {
   height: 100%;
   display: flex;
   justify-content: center;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.6s ease-in-out;
   align-items: center;
   opacity: 0;
   pointer-events: none;
@@ -144,7 +147,7 @@ input[type="range"] {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-radius: 2rem;
+  border-radius: 1rem;
   transition: transform 0.5s ease;
   transform: translateY(-2rem);
   min-width: 30%;
@@ -153,7 +156,7 @@ input[type="range"] {
 .copy-popup h4,
 .save-popup h4,
 .library-popup h4 {
-  font-size: 2rem;
+  font-size: 1rem;
   padding: 2rem;
 }
 .copy-container.active,
@@ -170,17 +173,17 @@ input[type="range"] {
 
 .save-name {
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: 0.3rem;
 }
 .close-save,
 .close-library {
-  border-top-right-radius: 1rem;
+  border-top-right-radius: 0rem;
   border-bottom-left-radius: 1rem;
   padding: 0.5rem;
 }
 .submit-save {
-  margin: 2rem;
-  padding: 1rem 3rem;
+  margin: 1rem;
+  padding: 0.7rem 2rem;
   background: rgb(60, 60, 92);
   border: none;
   border-radius: 10px;

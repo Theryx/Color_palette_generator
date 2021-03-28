@@ -6,7 +6,7 @@ const currentHexes = document.querySelectorAll(".color h2");
 const popup = document.querySelector(".copy-container");
 const adjustButton = document.querySelectorAll(".adjust");
 const lockButton = document.querySelectorAll(".lock");
-const closeAdjustments = document.querySelectorAll(".close-adjustment");
+const closeAdjustments = document.querySelectorAll(".closs-adjustment");
 const sliderContainers = document.querySelectorAll(".sliders");
 let initialColors;
 //This is for local storage
@@ -37,11 +37,11 @@ adjustButton.forEach((button, index) => {
     openAdjustmentPanel(index);
   });
 });
-closeAdjustments.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    closeAdjustmentPanel(index);
-  });
-});
+// closeAdjustments.forEach((button, index) => {
+//   button.addEventListener("click", () => {
+//     closeAdjustmentPanel(index);
+//   });
+// });
 lockButton.forEach((button, index) => {
   button.addEventListener("click", (e) => {
     lockLayer(e, index);
@@ -190,10 +190,15 @@ function copyToClipboard(hex) {
 }
 function openAdjustmentPanel(index) {
   sliderContainers[index].classList.toggle("active");
+  sliderContainers[index].children[0].addEventListener("click", (e) => {
+    sliderContainers[index].classList.remove("active");
+  });
 }
-function closeAdjustmentPanel(index) {
-  sliderContainers[index].classList.remove("active");
-}
+// function closeAdjustmentPanel(index) {
+//   console.log(sliderContainers[index]);
+//   sliderContainers[index].classList.remove("active");
+// }
+console.log(sliderContainers);
 function lockLayer(e, index) {
   const lockSVG = e.target.children[0];
   const activeBg = colorDivs[index];
