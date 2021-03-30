@@ -1,6 +1,8 @@
 # Color Pallette generator app
 
-Generate random combination of 5 colors in one click.
+You are working on a design and you have difficulty choosing colors? then this app is for you.
+
+Generate a random combination of 5 colors in one click.
 Tweek the color saturation,hue and brightness.
 Also helps you to copy to clipboard the HEX code of your final color
 You can save the palette in a library so as to use it later.
