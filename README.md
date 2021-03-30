@@ -20,17 +20,20 @@ Safe the pallete in the library for later use.
 
 ### Table of content
 
+### How to run the app
+To run the app , simply open the Index.html(Found in the root folder) file in a browser of your choice
+
 ### How to contribute?
 
-*Step 1: Fork the project repository*
+**Step 1: Fork the project repository**
 
 Fork the project repo. You can find the project's repository on GitHub, and then "fork" it by clicking the Fork button in the upper right corner:
 
-Step 2: Clone the fork
+**Step 2: Clone the fork**
 
-Step 3: Navigate to your local repository
+**Step 3: Navigate to your local repository**
 
-Step 4: Check that your fork is the "origin" remote
+**Step 4: Check that your fork is the "origin" remote**
 When you cloned your fork, that should have automatically set your fork as the "origin" remote. Use git remote -v to show your current remotes. You should see the URL of your fork (which you copied in step 3) next to the word "origin".
 
 If you don't see an "origin" remote, you can add it using: git remote add origin URL_OF_FORK.
@@ -39,6 +42,6 @@ Step 5: Create a new branch
 Make sure to create a new branch so as to avoid pushing code to "master" branch, it's a good practice to instead create your own branch. This creates an environment for your work that is isolated from the master branch of the project.
 Use git checkout -b BRANCH_NAME to create a new branch and then immediately switch to it. The name of the branch should briefly describe what you are working on, and should not contain any spaces.
 
-Step 6: Make changes, commit and push the code to the fork
+**Step 6: Make changes, commit and push the code to the fork**
 
-Step 7: Make a pull request
+**Step 7: Make a pull request**
